@@ -1,0 +1,82 @@
+ html,body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+.form-group{
+	font-style:italic;
+}
+
+.color{
+	text-color:blue;
+}
+      
+.ng-enter{
+	z-index:8888;
+}
+.ng-leave{
+	z-index:9999;
+}
+
+.page-home.ng-enter{
+animation:scaleUp 0.5s both ease-in;	
+}
+.page-home.ng-leave{
+transform-origin: 0% 0%;
+animation: rotateFall both 1s ease-in;	
+	
+}
+
+.page-movies.ng-enter{
+animation:scaleUp 0.5s both ease-in;	
+}
+.page-movies.ng-leave{
+transform-origin: 0% 0%;
+animation: rotateFall both 1s ease-in;	
+	
+}
+
+.page-browse.ng-enter{
+animation:scaleUp 0.5s both ease-in;	
+}
+.page-browse.ng-leave{
+transform-origin: 0% 0%;
+animation: rotateFall both 1s ease-in;	
+}
+
+.page-contact.ng-enter{
+animation:scaleUp 0.5s both ease-in;	
+}
+.page-contact.ng-leave{
+transform-origin: 0% 0%;	
+animation: rotateFall both 1s ease-in;	
+
+}
+
+
+.page-home{
+	background-image:url("../imgs/bat2.jpg");
+}
+
+.page-movies{
+	background-image:url("../imgs/bat1.jpg");
+}
+
+.page-browse{
+	background-image:url("../imgs/index.jpg");
+}
+
+.page-contact{
+	background-image:url("../imgs/index1.jpg");
+}
+
+.page-error{
+	background-image:url("../imgs/series.jpg");
+}
+
+
+.page{
+	bottom:0;
+	top:0;
+	width:100%;
+	position:absolute;
+}

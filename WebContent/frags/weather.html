@@ -1,0 +1,42 @@
+
+<div ng-controller="weatherCtrl">    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+        <b>Yahoo! Weather</b>
+          <input type="text" class="form-control" placeholder="Enter ZIP code" ng-model="location">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="searchresult()"><b>Get Weather</b></button>
+      </form>
+      </ul>
+    </div>
+ <hr>
+  
+  <div class="container">
+  <div class="row">
+  <div class="col-md4-4" ng-repeat="d in details">
+  	<div class="thumbnail">     
+		<div class="caption">
+		
+		<h4><b><font color="brown">{{d.title}}</b></font></h4>
+		<hr>
+		<h4>Today : {{d.item.pubDate}}</h4>
+		<h4>Temparature : {{d.item.condition.temp}}F</h4>
+		<h4>Condition: {{d.item.condition.text}}</h4><hr>
+		<h3>Forecast</h3>
+		
+		<div ng-repeat="forecast in details[0].item.forecast">
+		<h5><b>Day:{{forecast.day}}, {{forecast.date}}</b></h5>
+		<h6><b>High: {{forecast.high}}F - Low: {{forecast.low}}F</b></h6>
+		<h6><b>Condition : {{forecast.text}}</b></h6>
+		<hr>
+		</div>
+		</div>
+		</div>
+	</div>
+  </div> 
+  </div>
+</div>

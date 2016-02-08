@@ -1,0 +1,52 @@
+ <div ng-controller="searchCtrl">
+<div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+       <b><font color="brown"> Search For : </font></b><input type="text" class="form-control" placeholder="Search Query" ng-model="searchquery">
+       <b><font color="brown">  In : </font></b><input type="text" class="form-control" placeholder="Enter ZIP code" ng-model="zip">
+          
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="searchresult()">Search</button>
+      </form>
+      </ul>
+    </div>
+    <hr>
+    </div>
+  <div class="container">
+  <div class="row">
+  <div ng-repeat="d in details">
+  	<div class="col-md-4" ng-repeat="r in d.query.results.Result">
+  	<div class="thumbnail">     
+		<div class="caption">
+		<h4><font color="brown">{{r.Title}}</font></h4>
+		<div class="design">
+		<h6><b>Address:</b></h6>
+		<h6>{{r.Address}}</h6>
+		<h6>{{r.City}}</h6>
+		<h6>{{r.State}}</h6>
+		<h6>Distance : {{r.Distance}}mi</h6>
+		</div>
+		<h6>Contact : {{r.Phone}}</h6>
+		<h6>Rating : {{r.Rating.AverageRating}}</h6>
+		</div>
+		
+		<div>
+		<map center="{{r.Latitude}},{{r.Longitude}}" zoom="6">
+		<info-window position="{{r.Latitude}},{{r.Longitude}}" visible="true">
+		<marker position="{{r.Latitude}},{{r.Longitude}}" on-click="click()">
+		<h7><font color="brown">{{r.Title}}</font></h7><br>
+		<h8>{{r.Address}}</h8></marker>
+		</info-window>
+		</map>
+		</div>
+		
+		</div>
+		
+	</div>
+  </div>
+  </div>
+  </div>
+</div>

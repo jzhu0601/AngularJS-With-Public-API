@@ -1,0 +1,40 @@
+<div ng-controller="appleCtrl">    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">    
+
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li><a href="index.html">Albums</a></li>
+
+     <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Artist name" ng-model="app">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="storesearch()">Search</button>
+      </form>
+      </ul>	
+      </div>
+      </div>
+      </nav>
+      
+      
+<div class="container">      
+<div class="row" ng-repeat="app in appstore">
+<div class="col-md-4"  ng-repeat="a in app.results">
+		<img ng-src="{{a.artworkUrl100}}" style="width:100px;height:100px"><br><br>
+		<b>{{a.trackName}}</b>
+		<h5>Category : {{a.genres}}</h5>
+		<p>Owner: {{a.sellerName}}</p>
+		<p>Release Date : {{a.releaseDate}}</p>
+		<p>Price : {{a.formattedPrice}}</p>
+		<p>Size: {{a.fileSizeBytes/1000000}} MB</p>
+		<p>Rating : {{a.averageUserRatingForCurrentVersion}}</p>
+		<a href="{{a.trackViewUrl}}"> <button type="submit" class="btn btn-primary"> Get app</button></a>
+		
+	</div>
+	<br>
+	</div>
+	<br>
+</div>
